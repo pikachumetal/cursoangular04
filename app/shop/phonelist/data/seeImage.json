@@ -1,0 +1,4 @@
+{
+    "app/shop/phonelist/templates/phonelist.list.image.template.html": "Images",
+    "app/shop/phonelist/templates/phonelist.list.noimage.template.html": "No Images"
+}

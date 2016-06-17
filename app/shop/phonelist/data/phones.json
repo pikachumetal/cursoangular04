@@ -1,0 +1,25 @@
+[{
+    "name": "Nexus S",
+    "snippet": "Fast just got faster with Nexus S.",
+    "price": 460.234235,
+    "image": "http://fpoimg.com/500x250",
+    "imagealt": "Nexus S Image",
+    "enOferta": true,
+    "id": 1
+}, {
+    "name": "Motorola XOOM™ with Wi-Fi",
+    "snippet": "The Next, Next Generation tablet.",
+    "price": 480.52354235,
+    "image": "http://fpoimg.com/500x250",
+    "imagealt": "Motorola XOOM™ with Wi-Fi Image",
+    "enOferta": false,
+    "id": 2
+}, {
+    "name": "MOTOROLA XOOM™",
+    "snippet": "The Next, Next Generation tablet.",
+    "price": 420.23425265,
+    "image": "http://fpoimg.com/500x250",
+    "imagealt": "MOTOROLA XOOM™ Image",
+    "enOferta": true,
+    "id": 3
+}]

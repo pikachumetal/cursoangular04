@@ -1,0 +1,20 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4">
+            <phone-search-dir reloadjson="phoneListCtrl.reloadjson()" update-query="phoneListCtrl.onUpdateQuery(query)" 
+            queryselector-labels="phoneListCtrl.queryselectorLabels" language="phoneListCtrl.language" languageLabels="phoneListCtrl.languageLabels"
+            seeimage-labels="phoneListCtrl.seeimageLabels" seeimage="phoneListCtrl.seeimage" direccion="phoneListCtrl.direccion" 
+            queryselector="phoneListCtrl.queryselector"
+                query="phoneListCtrl.query"></phone-search-dir>
+            <!--<div phone-search reloadjson="phoneListCtrl.reloadjson()" queryselector-labels="phoneListCtrl.queryselectorLabels" seeimage-labels="phoneListCtrl.seeimageLabels" seeimage="phoneListCtrl.seeimage" direccion="phoneListCtrl.direccion" queryselector="phoneListCtrl.queryselector"
+                query="phoneListCtrl.query"></div>-->
+        </div>
+        <div class="col-md-8">
+            <phone-list-dir phones="phoneListCtrl.phones" delete-phone="phoneListCtrl.deletePhone(id)" seeimage="phoneListCtrl.seeimage" 
+            direccion="phoneListCtrl.direccion" queryselector="phoneListCtrl.queryselector" query="phoneListCtrl.query"></phone-list-dir>
+            <!--<div phone-list phones="phoneListCtrl.phones" delete-phone="phoneListCtrl.deletePhone(id)" seeimage="phoneListCtrl.seeimage" direccion="phoneListCtrl.direccion" queryselector="phoneListCtrl.queryselector" query="phoneListCtrl.query"></div>-->
+            <!--<div my-isolated-scope-with-model phones="phones" seeimage ="seeimage" direccion="direction"></div>-->
+        </div>
+    </div>
+    <pre>{{phoneListCtrl |json}}</pre>
+</div>

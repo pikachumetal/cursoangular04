@@ -1,0 +1,13 @@
+<li class="list-group-item " ng-class-even="list-group-item-info" ng-class-odd="list-group-item-warning" class="list-group-item "
+  ng-repeat="phone in $ctrl.phones | searchPhones:$ctrl.query:$ctrl.queryselector | orderBy: 'price || 0' : $ctrl.direccion ">
+  <h3 ng-class="{enOferta : phone.enOferta}">{{phone.name}}</h3>
+  <p>{{phone.snippet}}</p>
+  <p>Price: {{phone.price ||0 | currency}}</p>
+  <p>
+    <img ng-src="{{phone.image}}" alt="{{phone.imagealt}}" class="center-block"></p>
+  <p class="text-right">
+    <a ng-href="#/phones/detail/{{phone.id}}" class="btn btn-primary"><span class="glyphicon glyphicon-eye-open"></span> Details</a>
+    <a ng-href="#/phones/edit/{{phone.id}}" class="btn  btn-primary"><span class="glyphicon glyphicon-edit"></span> Edit</a>
+    <button class="btn btn-danger" ng-click="$ctrl.deletePhone({id: phone.id})"><span class="glyphicon glyphicon-remove"></span> Delete</button>
+  </p>
+</li>
