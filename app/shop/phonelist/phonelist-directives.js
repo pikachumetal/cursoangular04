@@ -10,15 +10,20 @@ angular.module('appPhone').component("phoneListDir", {
     }
 });
 
-
-var searchPhonesQueryController = function searchPhonesQueryInputController() {
+var searchPhonesQueryController = function searchPhonesQueryInputController($translate) {
     "use strict";
     var model = this;
 
-    model.onUpdateQuery = function onUpdateQuery(query){
-        model.query= query;
-        model.updateQuery({query:query});
+    model.onUpdateQuery = function onUpdateQuery(query) {
+        model.query = query;
+        model.updateQuery({
+            query: query
+        });
     }
+    
+    model.onChangeLanguage = function changeLanguage() {
+        $translate.use(model.language);
+    };
 };
 
 angular.module('appPhone').component("phoneSearchDir", {
@@ -31,8 +36,10 @@ angular.module('appPhone').component("phoneSearchDir", {
         queryselector: '=',
         query: '<',
         reloadjson: '&',
-        updateQuery: '&',                
-changeLanguage: '&'
+        updateQuery: '&',
+        changeLanguage: '&',
+        languagesLabels: '<',
+        language: '='
     },
     controller: searchPhonesQueryController
 });
@@ -47,8 +54,10 @@ var searchPhonesQueryInputController = function searchPhonesQueryInputController
     //     }
     // };
 
-    model.onUpdateQuery = function onUpdateQuery(){
-        model.updateQuery({query:model.query});
+    model.onUpdateQuery = function onUpdateQuery() {
+        model.updateQuery({
+            query: model.query
+        });
     }
 };
 

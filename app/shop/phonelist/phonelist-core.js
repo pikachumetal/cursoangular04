@@ -3,26 +3,26 @@ angular.module('appPhone').controller('PhoneListController', function PhoneListC
     var model = this;
 
     var reloadJSON = function reloadJSON() {
-        PhoneService.getPhones().then(function (data) {
+        PhoneService.getPhones().then(function(data) {
             model.phones = data;
             PhoneLocalStorage.setPhones(data);
         });
     };
 
     var loadLanguages = function loadLanguages() {
-        PhoneService.getLanguages().then(function (data) {
-            model.loadLanguages = data;
+        PhoneService.getLanguages().then(function(data) {
+            model.languagesLabels = data;
         });
     };
 
     var loadQuerySelector = function loadQuerySelector() {
-        PhoneService.getQuerySelector().then(function (data) {
+        PhoneService.getQuerySelector().then(function(data) {
             model.queryselectorLabels = data;
         });
     };
 
     var loadSeeImage = function loadSeeImage() {
-        PhoneService.getSeeImage().then(function (data) {
+        PhoneService.getSeeImage().then(function(data) {
             model.seeimageLabels = data;
         });
     };
@@ -37,12 +37,14 @@ angular.module('appPhone').controller('PhoneListController', function PhoneListC
 
     var deletePhone = function deletePhone(id) {
         id = parseInt(id || 0);
-        model.phones = model.phones.filter(function (item) { return item.id !== id; });
+        model.phones = model.phones.filter(function(item) {
+            return item.id !== id;
+        });
         PhoneLocalStorage.setPhones(model.phones);
     };
 
-    var changeLanguage = function changeLanguage(){
-$translate.use(model.language);
+    model.changeLanguage = function changeLanguage() {
+        $translate.use(model.language);
     };
 
     var initController = function initController() {
@@ -51,7 +53,7 @@ $translate.use(model.language);
         model.queryselector = "1";
         loadQuerySelector();
         loadLanguages();
-        model.language ="en";
+        model.language = "en";
         //model.queryselectorLabels = { "1": "Name", "2": "Description" };
         model.direccion = true;
         loadSeeImage();

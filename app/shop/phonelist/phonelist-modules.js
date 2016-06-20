@@ -1,4 +1,4 @@
-angular.module('appPhone', ["ngRoute", "ngMessages", 'pascalprecht.translate']).config(function ($routeProvider, $translateProvider) {
+angular.module('appPhone', ["ngRoute", "ngMessages", 'pascalprecht.translate']).config(function($routeProvider, $translateProvider) {
     "use strict";
 
     $routeProvider
@@ -25,13 +25,16 @@ angular.module('appPhone', ["ngRoute", "ngMessages", 'pascalprecht.translate']).
         TITLE: 'Hello',
         FOO: 'This is a paragraph.',
         BUTTON_LANG_EN: 'english',
-        BUTTON_LANG_DE: 'german'
+        BUTTON_LANG_DE: 'german',
+        LANGUAGE_LABEL: 'Languages:'
     });
     $translateProvider.translations('de', {
         TITLE: 'Hallo',
         FOO: 'Dies ist ein Paragraph.',
         BUTTON_LANG_EN: 'englisch',
-        BUTTON_LANG_DE: 'deutsch'
+        BUTTON_LANG_DE: 'deutsch',
+        LANGUAGE_LABEL: 'Sprachen:'
     });
+
     $translateProvider.preferredLanguage('en');
 });
